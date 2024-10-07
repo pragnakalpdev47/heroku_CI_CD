@@ -1,1 +1,1 @@
-web: gunicorn wsgi:app
+web: gunicorn --bind :$5000 wsgi:app
