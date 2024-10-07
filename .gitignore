@@ -1,0 +1,5 @@
+# environment file
+/env
+
+# database file
+user_data.db
