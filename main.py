@@ -50,4 +50,4 @@ def success():
 
 if __name__ == "__main__":
     init_db()  # Initialize the database when the app starts
-    app.run()
+    app.run(host="0.0.0.0", port=5000)
