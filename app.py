@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-import sqlite3
+import sqlite3, os
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
@@ -50,4 +50,6 @@ def success():
 
 if __name__ == "__main__":
     init_db()  # Initialize the database when the app starts
-    app.run(host="0.0.0.0", port=5000)
+    # Use environment variables for port, defaulting to 8000
+    port = int(os.environ.get('PORT', 8000))
+    app.run(host='0.0.0.0', port=port)
