@@ -19,6 +19,9 @@ def init_db():
     conn.commit()
     conn.close()
 
+# # Initialize the database when the app starts
+init_db()
+
 # Insert data into the database
 def insert_user(name, email, password):
     hashed_password = generate_password_hash(password)  # Encrypt the password
@@ -49,7 +52,7 @@ def success():
     return render_template("success.html")
 
 if __name__ == "__main__":
-    init_db()  # Initialize the database when the app starts
+    # init_db()  # Initialize the database when the app starts
     # Use environment variables for port, defaulting to 8000
     port = int(os.environ.get('PORT', 8000))
     app.run(host='0.0.0.0', port=port)
